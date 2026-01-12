@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COSMIC LAUNCH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Quicksand:wght@300;400;500;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        @keyframes drift {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.1) translate(-2%, -2%); }
+            100% { transform: scale(1) translate(0, 0); }
+        }
+
+        .nebula-drift {
+            animation: drift 60s ease-in-out infinite;
+        }
+
+        @keyframes wukong-drift {
+            0% { transform: scale(1.1) translate(0%, 0%); }
+            25% { transform: scale(1.15) translate(-1%, 1%); }
+            50% { transform: scale(1.2) translate(1%, -1%); }
+            75% { transform: scale(1.15) translate(1%, 1%); }
+            100% { transform: scale(1.1) translate(0%, 0%); }
+        }
+
+        .animate-wukong-cinematic {
+            animation: wukong-drift 40s ease-in-out infinite;
+        }
+
+        @keyframes star-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .star-particle {
+            animation: star-pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes planet-pass {
+            0% { transform: translateY(-110vh) scale(0.1) rotate(0deg); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(110vh) scale(3) rotate(360deg); opacity: 0; }
+        }
+
+        .animate-planet-pass {
+            animation: planet-pass 0.8s linear forwards;
+        }
+
+        @keyframes impact-flash {
+            0% { opacity: 0; }
+            10% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
+
+        .impact-flash {
+            animation: impact-flash 0.5s ease-out forwards;
+        }
+
+        @keyframes intense-shake {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-10px, -10px); }
+            20% { transform: translate(10px, 10px); }
+            30% { transform: translate(-10px, 10px); }
+            40% { transform: translate(10px, -10px); }
+            50% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, 5px); }
+            70% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        .animate-impact-shake {
+            animation: intense-shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes blast-radius {
+            0% { transform: scale(0); opacity: 1; filter: blur(0); }
+            100% { transform: scale(6); opacity: 0; filter: blur(30px); }
+        }
+
+        .blast {
+            animation: blast-radius 0.7s ease-out forwards;
+        }
+
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* SpaceX Rocket Finishes */
+        .rocket-glint {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: glint 3s linear infinite;
+        }
+
+        @keyframes glint {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
